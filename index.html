@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript">
-      function CheckCountry(val){
-      var element=document.getElementById('country');
-      if(val=='others')
-        element.style.display='block';
-      else  
-        element.style.display='none';
-    }
+      function CheckCountry(val) {
+      var element = document.getElementById('country');
+        if (val == 'others') {
+          element.style.display = 'block';
+          element.required = true;
+        } else {
+          element.style.display = 'none';
+          element.required = false; 
+          element.value = "";       
+        }
+      }
     </script> 
     <title>Survey Form</title>
   </head>
@@ -46,7 +50,7 @@
               <option value="brazil">Brazil</option>
               <option value="others">Others</option>
             </select>
-            <input type="text" name="country" id="country" style='display:none;'placeholder="Enter your country" required/>
+            <input type="text" name="other_country" id="country" style='display:none;' placeholder="Enter your country"/>
           </div>
         </section>
 
